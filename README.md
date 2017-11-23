@@ -16,7 +16,7 @@ Documentation for the SDK at [Developers Documentation](https://docs.rainmeter.n
 
 ### IsActive(`config name`)
 
-`[&MeasureName:IsActive(illustro\System)]`
-The inline section variable will be replaced where used with `1` if the named config is active / loaded and `-1` if not.
-`DynamnicVariables=1` must be set on the measure or meter where this is used.
-Do not enclose the config name in quotes.
+`[&MeasureName:IsActive(illustro\System)]`  
+The inline section variable will be replaced where used with `1` if the named config is active / loaded and `-1` if not.  
+`DynamnicVariables=1` must be set on the measure or meter where this is used.  
+Do not enclose the config name in quotes.  
