@@ -11,6 +11,7 @@ Documentation for the SDK at [Developers Documentation](https://docs.rainmeter.n
 
 ### ConfigName
 `ConfigName=illustro\System` 
+The value of the measure will be `1` if the named config is active / loaded and `-1` if not.  
 
 ## Inline Section Variable Functions
 
