@@ -53,10 +53,18 @@ HWND GetLoadedConfig(const std::wstring& configName)
 	HWND trayHWND = FindWindow(RAINMETER_TRAY_CLASSNAME, NULL);
 	if (trayHWND == NULL) return NULL;
 
+	std::wstring config = configName;
+	for(int i = 0; i < config.size()-1; ++i)
+	{
+		if (config[i] == L'\\' && config[i + 1] == L'\\') {
+			config.erase(i, 1);
+		}
+	}
+
 	COPYDATASTRUCT cds = {};
 	cds.dwData = RAINMETER_QUERY_ID_SKIN_WINDOWHANDLE;
-	cds.cbData = (DWORD)(configName.size() + 1) * sizeof(WCHAR);
-	cds.lpData = (void*)configName.c_str();
+	cds.cbData = (DWORD)(config.size() + 1) * sizeof(WCHAR);
+	cds.lpData = (void*)config.c_str();
 
 	return (HWND)SendMessage(trayHWND, WM_COPYDATA, 0, (LPARAM)&cds);;
 }
@@ -66,7 +74,7 @@ std::wstring GetWindowTitle(HWND hwnd)
 	const int length = GetWindowTextLength(hwnd);
 	std::wstring buff;
 	buff.resize(length+1);
-	GetWindowText(hwnd, &buff[0], buff.size());
+	GetWindowText(hwnd, &buff[0], (int)buff.size());
 	return buff;
 }
 

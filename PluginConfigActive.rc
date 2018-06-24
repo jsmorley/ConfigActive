@@ -8,7 +8,7 @@
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,0,0
+ FILEVERSION 2,1,0
  PRODUCTVERSION 4,2,0,3096
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
@@ -24,8 +24,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4"
         BEGIN
-            VALUE "FileVersion", "2.0.0.0"
-            VALUE "LegalCopyright", "Â© 2018 - Jeffrey Morley and theAzack9"
+            VALUE "FileVersion", "2.1.0.0"
+            VALUE "LegalCopyright", "© 2018 - Jeffrey Morley and theAzack9"
 
             // Don't change the entries below!
             VALUE "ProductName", "Rainmeter"
