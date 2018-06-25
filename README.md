@@ -29,6 +29,7 @@ Note: All other measure specific options are ignored when ConfigName is set.
 ### Using inline plugin section variables
 
 **[&MeasureName:IsActive(ConfigName)]**
+
 The section variable will be resolved to `1` if the config is active and `-1` if not.
 
 Example `IfCondition=[&MeasureName:IsActive(Illustro\System)] = 1`
@@ -36,6 +37,7 @@ Example `IfCondition=[&MeasureName:IsActive(Illustro\System)] = 1`
 Note: `DynamicVariables=1` must be set on the measure or meter where this is used.
 
 **[&MeasureName:ConfigVariantName(ConfigName)]**
+
 The section variable will be resolved to the name of currently running skin .ini file name.
 
 Example `IfTrueAction=[!SetOption SomeMeter Text "Variant [&MeasureName:ConfigVariantName(Illustro\System)] is running."]`
