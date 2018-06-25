@@ -5,9 +5,9 @@ Creates the ConfigActive.dll plugin for Rainmeter.
 Returns a number value of `1` if a named config is active / loaded, and `-1` if not.
 Returns a string value of the skin .ini variant name of the named config.
 
-##Checking active status of a skin
+##Checking active status of a skin##
 
-###Using a measure option
+###Using a measure option###
 
 **ConfigName**
 The name of a config you wish to test. This is case-insensitive.
