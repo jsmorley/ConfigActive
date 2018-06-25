@@ -21,8 +21,8 @@ Plugin=ConfigActive
 ConfigName=Illustro\System
 ```
 
-**- The number value of the measure will be 1 if the config is active and -1 if not.**
-**- The string value of the measure will be the currently running skin .ini file name.**
+- The number value of the measure will be `1` if the config is active and `-1` if not.
+- The string value of the measure will be the currently running skin .ini file name.
 
 Note: All other measure specific options are ignored when ConfigName is set.
 
@@ -46,7 +46,7 @@ Note: DynamicVariables=1 must be set on the measure or meter where this is used.
 
 ### Using a measure option
 
-**TypeSkin**
+**Type**
 In addition to the basic functionality supported by the ConfigName option, the plugin will obtain a "count" of the number of active configs. This will create a numbered "index" of all active configs, ordered by the current z-position (front to back) of the skin windows.
 
 This count can be returned as the number value by setting `Type=Count` on the measure.
