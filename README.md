@@ -5,9 +5,9 @@ Creates the ConfigActive.dll plugin for Rainmeter.
 Returns a number value of `1` if a named config is active / loaded, and `-1` if not.
 Returns a string value of the skin .ini variant name of the named config.
 
-##Checking active status of a skin
+## Checking active status of a skin
 
-###Using a measure option
+### Using a measure option
 
 **ConfigName**
 The name of a config you wish to test. This is case-insensitive.
@@ -26,7 +26,7 @@ ConfigName=Illustro\System
 
 Note: All other measure specific options are ignored when ConfigName is set.
 
-###Using inline plugin section variables
+### Using inline plugin section variables
 
 **[&MeasureName:IsActive(ConfigName)]**
 The section variable will be resolved to `1` if the config is active and `-1` if not.
@@ -42,9 +42,9 @@ Example `IfTrueAction=[!SetOption SomeMeter Text "Variant [&MeasureName:ConfigVa
 
 Note: DynamicVariables=1 must be set on the measure or meter where this is used.
 
-##Getting a count of running skins
+## Getting a count of running skins
 
-###Using a measure option
+### Using a measure option
 
 **TypeSkin**
 In addition to the basic functionality supported by the ConfigName option, the plugin will obtain a "count" of the number of active configs. This will create a numbered "index" of all active configs, ordered by the current z-position (front to back) of the skin windows.
@@ -58,7 +58,7 @@ Note: The intent of this is to be able to use Count, and then, perhaps in Lua, i
 **Index1**
 Used in conjunction with Type=Config or Type=Skin to return ether the config name or skin .ini name for a particular indexed config.
 
-###Using inline plugin section variables
+### Using inline plugin section variables
 
 **[&MeasureName:LoadedCount()]**
 The section variable will be resolved to the number of currently active configs.
