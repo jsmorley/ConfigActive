@@ -69,6 +69,26 @@ HWND GetLoadedConfig(const std::wstring& configName)
 	return (HWND)SendMessage(trayHWND, WM_COPYDATA, 0, (LPARAM)&cds);;
 }
 
+PLUGIN_EXPORT LPCWSTR IsHidden(void* data, const int argc, const WCHAR* argv[])
+{
+	HWND trayHWND = FindWindow(RAINMETER_TRAY_CLASSNAME, NULL);
+	if (trayHWND == NULL) return NULL;
+
+	COPYDATASTRUCT cds = {};
+	cds.dwData = RAINMETER_QUERY_ID_SKIN_WINDOWHANDLE;
+	cds.cbData = (DWORD)(wcslen(argv[0]) + 1) * sizeof(WCHAR);
+	cds.lpData = (void*)argv[0];
+
+	HWND configHandle = (HWND)SendMessage(trayHWND, WM_COPYDATA, 0, (LPARAM)&cds);
+	if (configHandle == NULL) return L"0";
+
+	BOOL visibleState = IsWindowVisible(configHandle);
+	if (!visibleState) {
+		return L"1";
+	}
+	return L"-1";
+}
+
 std::wstring GetWindowTitle(HWND hwnd)
 {
 	const int length = GetWindowTextLength(hwnd);
